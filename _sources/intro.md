@@ -8,7 +8,7 @@ Smangus（司馬庫斯）位於新竹縣尖石鄉玉峰地區，人口以泰雅�
 
 
 <figure　 style="text-align: left;">
-<img src="_static/logo2.JPg" alt="logo" width="200"/>
+<img src="_static/logo2.jpg" alt="logo" width="200"/>
  <figcaption style="font-size: 0.9em; color: gray;">
 當地小米收成　圖片來源：筆者照片
   </figcaption>
