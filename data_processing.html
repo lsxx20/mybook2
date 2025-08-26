@@ -379,6 +379,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-luma-ai">3D 模型掃描建置（Luma AI）</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinaji-marikowan">日治時期 Kinaji／Marikowan代表聚落位置圖</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">司馬庫斯遷徙地圖</a></li>
 </ul>
@@ -394,9 +395,39 @@ document.write(`
                   
   <section id="id1">
 <h1>資料處理／地圖繪製<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="d-luma-ai">
+<h2>3D 模型掃描建置（Luma AI）<a class="headerlink" href="#d-luma-ai" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>於手機中下載 Luma 3D Capture</p></li>
+<li><p>依照軟體介面提示，環繞拍攝欲建置的物件</p></li>
+<li><p>上傳至 Luma 雲端 （上傳時間大約 1 小時，視拍攝物件大小）</p></li>
+<li><p>於電腦 Luma AI - Interactive Scenes 網頁登入拍攝時所使用的帳號，檢視個人先前上傳的影像<br />
+<a class="reference external" href="https://lumalabs.ai/interactive-scenes">https://lumalabs.ai/interactive-scenes</a></p></li>
+<li><p>點選分享功能，內有可複製的 iframe code ，可嵌入於於 jupyter book 中完成 3D 模型呈現</p></li>
+</ul>
+</section>
 <section id="kinaji-marikowan">
 <h2>日治時期 Kinaji／Marikowan代表聚落位置圖<a class="headerlink" href="#kinaji-marikowan" title="Link to this heading">#</a></h2>
-<p>匯入套件</p>
+<ul>
+<li><p>準備點位資料 (QGIS)</p>
+<p>建立新的 gpkg ，根據整理文獻所得，點出當時聚落的大致位置。屬性表欄位包括聚落名稱、所屬社群</p>
+</li>
+</ul>
+<figure style="margin-left:2em; text-align:left;">
+  <img src="_static/tribe2.png" alt="logo" width="300" style="display:inline-block; margin:0;">
+  <figcaption style="font-size:0.9em; color:gray; text-align:left;">
+    點位示意圖　圖片來源：筆者照片
+  </figcaption>
+</figure>
+<figure style="margin-left:2em; text-align:left;">
+  <img src="_static/tribe3.png" alt="logo" width="300" style="display:inline-block; margin:0;">
+  <figcaption style="font-size:0.9em; color:gray; text-align:left;">
+    屬性表示意圖　圖片來源：筆者照片
+  </figcaption>
+</figure>
+<ul class="simple">
+<li><p>匯入套件</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
@@ -407,7 +438,7 @@ document.write(`
 <ul class="simple">
 <li><p>輸入／輸出路徑</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DATA</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;日治蕃社.gpkg&quot;</span><span class="p">)</span>  
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DATA</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;日治原社.gpkg&quot;</span><span class="p">)</span>  
 <span class="n">OUT</span>  <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;docs/_static/maps/kinaji_marikowan_points.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -545,7 +576,12 @@ folium.LayerControl(position=&quot;topright&quot;, collapsed=False).add_to(m)
 </section>
 <section id="id2">
 <h2>司馬庫斯遷徙地圖<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>匯入套件</p>
+<ul>
+<li><p>準備點位資料 (QGIS)</p>
+<p>建立新的 gpkg ，根據整理文獻所得，加入當時聚落的大致位置與名稱</p>
+</li>
+<li><p>匯入套件</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
@@ -774,6 +810,7 @@ folium.LayerControl(position=&quot;topright&quot;, collapsed=False).add_to(m)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-luma-ai">3D 模型掃描建置（Luma AI）</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinaji-marikowan">日治時期 Kinaji／Marikowan代表聚落位置圖</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">司馬庫斯遷徙地圖</a></li>
 </ul>
