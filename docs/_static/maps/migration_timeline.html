@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b5cbfa217399826c02a601116580bca7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b5cbfa217399826c02a601116580bca7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b5cbfa217399826c02a601116580bca7 = L.map(
+                "map_b5cbfa217399826c02a601116580bca7",
+                {
+                    center: [24.529286499999998, 121.28555333333334],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_b5cbfa217399826c02a601116580bca7);
+
+            
+
+        
+    
+            var tile_layer_b0b562571d90b578334d5cf0291e56ba = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b0b562571d90b578334d5cf0291e56ba.addTo(map_b5cbfa217399826c02a601116580bca7);
+        
+    
+            var tile_layer_687271a8be4b03e6b4ae49284798001f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_687271a8be4b03e6b4ae49284798001f.addTo(map_b5cbfa217399826c02a601116580bca7);
+        
+    
+            L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+                _getDisplayDateFormat: function(date){
+                    var newdate = new moment(date);
+                    console.log(newdate)
+                    return newdate.format("YYYY-MM-DD");
+                }
+            });
+            map_b5cbfa217399826c02a601116580bca7.timeDimension = L.timeDimension(
+                {
+                    period: "P1Y",
+                }
+            );
+            var timeDimensionControl = new L.Control.TimeDimensionCustom(
+                {
+  "position": "bottomleft",
+  "minSpeed": 0.1,
+  "maxSpeed": 10,
+  "autoPlay": true,
+  "loopButton": false,
+  "timeSliderDragUpdate": true,
+  "speedSlider": true,
+  "playerOptions": {
+  "transitionTime": 200,
+  "loop": true,
+  "startOver": true,
+},
+}
+            );
+            map_b5cbfa217399826c02a601116580bca7.addControl(this.timeDimensionControl);
+
+            var geoJsonLayer = L.geoJson({"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [121.155874, 24.116489]}, "properties": {"time": "1900-01-01", "tooltip": "\u745e\u5ca9\u88c2\u77f3\uff08Sbayan/Pinsbkan\uff09\uff081900-01-01\uff09", "popup": "<b>\u745e\u5ca9\u88c2\u77f3\uff08Sbayan/Pinsbkan\uff09</b><br><small>1900-01-01</small><br>\u793a\u4f8b\uff1a\u6cf0\u96c5\u65cf\u53e3\u50b3\u5275\u751f\u8056\u77f3\u76f8\u95dc\u5340\u57df\u3002\u8acb\u6539\u70ba\u4f60\u7684\u6558\u8ff0\u3002", "icon": "circle", "iconstyle": {"fillOpacity": 0.95, "stroke": true, "radius": 6}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [121.356597, 24.396734]}, "properties": {"time": "1910-01-01", "tooltip": "\u601d\u6e90\u57e1\u53e3\uff081910-01-01\uff09", "popup": "<b>\u601d\u6e90\u57e1\u53e3</b><br><small>1910-01-01</small><br>\u793a\u4f8b\uff1a\u8d8a\u5dba\u901a\u9053\u978d\u90e8\u3002\u8acb\u6539\u70ba\u4f60\u7684\u6558\u8ff0\u3002", "icon": "circle", "iconstyle": {"fillOpacity": 0.95, "stroke": true, "radius": 6}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [121.33424, 24.57878]}, "properties": {"time": "1920-01-01", "tooltip": "\u53f8\u99ac\u5eab\u65af\uff08\u73fe\u4eca\u90e8\u843d\u6838\u5fc3\uff09\uff081920-01-01\uff09", "popup": "<b>\u53f8\u99ac\u5eab\u65af\uff08\u73fe\u4eca\u90e8\u843d\u6838\u5fc3\uff09</b><br><small>1920-01-01</small><br>\u793a\u4f8b\uff1a\u73fe\u4eca\u805a\u843d\u6838\u5fc3\u3002\u8acb\u6539\u70ba\u4f60\u7684\u6558\u8ff0\u3002", "icon": "circle", "iconstyle": {"fillOpacity": 0.95, "stroke": true, "radius": 6}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [121.332666, 24.644172]}, "properties": {"time": "1930-01-01", "tooltip": "\u62ac\u8000\uff08Tayax\uff09\uff081930-01-01\uff09", "popup": "<b>\u62ac\u8000\uff08Tayax\uff09</b><br><small>1930-01-01</small><br>\u793a\u4f8b\uff1a\u77f3\u78ca\u6eaa\u8c37\u4e00\u5e36\u3002\u8acb\u6539\u70ba\u4f60\u7684\u6558\u8ff0\u3002", "icon": "circle", "iconstyle": {"fillOpacity": 0.95, "stroke": true, "radius": 6}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [121.253389, 24.721806]}, "properties": {"time": "1940-01-01", "tooltip": "\u62c9\u865f\uff08Rahaw\uff09\uff081940-01-01\uff09", "popup": "<b>\u62c9\u865f\uff08Rahaw\uff09</b><br><small>1940-01-01</small><br>\u793a\u4f8b\uff1a\u65b0\u6a02\u6751\u57df\u62c9\u865f\u4e00\u5e36\u3002\u8acb\u6539\u70ba\u4f60\u7684\u6558\u8ff0\u3002", "icon": "circle", "iconstyle": {"fillOpacity": 0.95, "stroke": true, "radius": 6}}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [121.280554, 24.717738]}, "properties": {"time": "1950-01-01", "tooltip": "\u9ce5\u5634\uff08Cyocuy\uff09\uff081950-01-01\uff09", "popup": "<b>\u9ce5\u5634\uff08Cyocuy\uff09</b><br><small>1950-01-01</small><br>\u793a\u4f8b\uff1a\u9ce5\u5634\u4e00\u5e36\u3002\u8acb\u6539\u70ba\u4f60\u7684\u6558\u8ff0\u3002", "icon": "circle", "iconstyle": {"fillOpacity": 0.95, "stroke": true, "radius": 6}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[121.155874, 24.116489], [121.356597, 24.396734]]}, "properties": {"times": ["1900-01-01", "1909-12-31"], "tooltip": "\u745e\u5ca9\u88c2\u77f3 \u2192 \u601d\u6e90\u57e1\u53e3\uff08main\uff09", "popup": "<b>\u745e\u5ca9\u88c2\u77f3 \u2192 \u601d\u6e90\u57e1\u53e3</b><br><small>1900-01-01 \u2192 1909-12-31</small><br>\u4e3b\u7dda\uff08\u8acb\u66f4\u65b0\u6642\u9593\uff09", "style": {"weight": 4, "opacity": 0.85}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[121.356597, 24.396734], [121.33424, 24.57878]]}, "properties": {"times": ["1910-01-01", "1919-12-31"], "tooltip": "\u601d\u6e90\u57e1\u53e3 \u2192 \u53f8\u99ac\u5eab\u65af\uff08main\uff09", "popup": "<b>\u601d\u6e90\u57e1\u53e3 \u2192 \u53f8\u99ac\u5eab\u65af</b><br><small>1910-01-01 \u2192 1919-12-31</small><br>\u4e3b\u7dda\uff08\u8acb\u66f4\u65b0\u6642\u9593\uff09", "style": {"weight": 4, "opacity": 0.85}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[121.33424, 24.57878], [121.332666, 24.644172]]}, "properties": {"times": ["1930-01-01", "1934-12-31"], "tooltip": "\u53f8\u99ac\u5eab\u65af \u2192 \u62ac\u8000\uff08rahaw\uff09", "popup": "<b>\u53f8\u99ac\u5eab\u65af \u2192 \u62ac\u8000</b><br><small>1930-01-01 \u2192 1934-12-31</small><br>\u5206\u652fA\uff08\u8acb\u66f4\u65b0\u6642\u9593\uff09", "style": {"weight": 4, "opacity": 0.85}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[121.332666, 24.644172], [121.253389, 24.721806]]}, "properties": {"times": ["1935-01-01", "1939-12-31"], "tooltip": "\u62ac\u8000 \u2192 \u62c9\u865f\uff08rahaw\uff09", "popup": "<b>\u62ac\u8000 \u2192 \u62c9\u865f</b><br><small>1935-01-01 \u2192 1939-12-31</small><br>\u5206\u652fA\uff08\u8acb\u66f4\u65b0\u6642\u9593\uff09", "style": {"weight": 4, "opacity": 0.85}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[121.253389, 24.721806], [121.33424, 24.57878]]}, "properties": {"times": ["1940-01-01", "1944-12-31"], "tooltip": "\u62c9\u865f \u2192 \u53f8\u99ac\u5eab\u65af\uff08rahaw\uff09", "popup": "<b>\u62c9\u865f \u2192 \u53f8\u99ac\u5eab\u65af</b><br><small>1940-01-01 \u2192 1944-12-31</small><br>\u5206\u652fA\uff08\u8fd4\u56de\uff0c\u8acb\u66f4\u65b0\u6642\u9593\uff09", "style": {"weight": 4, "opacity": 0.85}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[121.33424, 24.57878], [121.332666, 24.644172]]}, "properties": {"times": ["1950-01-01", "1954-12-31"], "tooltip": "\u53f8\u99ac\u5eab\u65af \u2192 \u62ac\u8000\uff08cyocuy\uff09", "popup": "<b>\u53f8\u99ac\u5eab\u65af \u2192 \u62ac\u8000</b><br><small>1950-01-01 \u2192 1954-12-31</small><br>\u5206\u652fB\uff08\u8acb\u66f4\u65b0\u6642\u9593\uff09", "style": {"weight": 4, "opacity": 0.85}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[121.332666, 24.644172], [121.280554, 24.717738]]}, "properties": {"times": ["1955-01-01", "1959-12-31"], "tooltip": "\u62ac\u8000 \u2192 \u9ce5\u5634\uff08cyocuy\uff09", "popup": "<b>\u62ac\u8000 \u2192 \u9ce5\u5634</b><br><small>1955-01-01 \u2192 1959-12-31</small><br>\u5206\u652fB\uff08\u8acb\u66f4\u65b0\u6642\u9593\uff09", "style": {"weight": 4, "opacity": 0.85}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[121.280554, 24.717738], [121.33424, 24.57878]]}, "properties": {"times": ["1960-01-01", "1964-12-31"], "tooltip": "\u9ce5\u5634 \u2192 \u53f8\u99ac\u5eab\u65af\uff08cyocuy\uff09", "popup": "<b>\u9ce5\u5634 \u2192 \u53f8\u99ac\u5eab\u65af</b><br><small>1960-01-01 \u2192 1964-12-31</small><br>\u5206\u652fB\uff08\u8fd4\u56de\uff0c\u8acb\u66f4\u65b0\u6642\u9593\uff09", "style": {"weight": 4, "opacity": 0.85}}}]}, {
+                    pointToLayer: function (feature, latLng) {
+                        if (feature.properties.icon == 'marker') {
+                            if(feature.properties.iconstyle){
+                                return new L.Marker(latLng, {
+                                    icon: L.icon(feature.properties.iconstyle)});
+                            }
+                            //else
+                            return new L.Marker(latLng);
+                        }
+                        if (feature.properties.icon == 'circle') {
+                            if (feature.properties.iconstyle) {
+                                return new L.circleMarker(latLng, feature.properties.iconstyle)
+                                };
+                            //else
+                            return new L.circleMarker(latLng);
+                        }
+                        //else
+
+                        return new L.Marker(latLng);
+                    },
+                    style: function (feature) {
+                        return feature.properties.style;
+                    },
+                    onEachFeature: function(feature, layer) {
+                        if (feature.properties.popup) {
+                        layer.bindPopup(feature.properties.popup);
+                        }
+                        if (feature.properties.tooltip) {
+                        layer.bindTooltip(feature.properties.tooltip);
+                        }
+                    }
+                })
+
+            var timestamped_geo_json_22b8b5747945dbc90ad0ae4cdb6aaf05 = L.timeDimension.layer.geoJson(
+                geoJsonLayer,
+                {
+                    updateTimeDimension: true,
+                    addlastPoint: true,
+                    duration: undefined,
+                }
+            ).addTo(map_b5cbfa217399826c02a601116580bca7);
+        
+    
+            var layer_control_6b9ff6a735dbe20d185fbfcb2166756d_layers = {
+                base_layers : {
+                    "\u5e95\u5716\uff08\u4eae\uff09" : tile_layer_b0b562571d90b578334d5cf0291e56ba,
+                    "\u5e95\u5716\uff08\u6697\uff09" : tile_layer_687271a8be4b03e6b4ae49284798001f,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_6b9ff6a735dbe20d185fbfcb2166756d = L.control.layers(
+                layer_control_6b9ff6a735dbe20d185fbfcb2166756d_layers.base_layers,
+                layer_control_6b9ff6a735dbe20d185fbfcb2166756d_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_b5cbfa217399826c02a601116580bca7);
+
+        
+</script>
+</html>

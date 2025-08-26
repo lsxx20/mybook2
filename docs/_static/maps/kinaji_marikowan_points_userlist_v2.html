@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_914e429c92e52754747082b406281805 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+ position: fixed; bottom: 16px; right: 16px; z-index: 9999;
+ background: white; padding: 10px 12px; border: 1px solid #ccc;
+ border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,.3);
+ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans TC', sans-serif;">
+  <div style="font-weight:600;margin-bottom:6px;">代表社群</div>
+  <div style="display:flex;align-items:center;margin:3px 0;">
+    <span style="display:inline-block;width:14px;height:14px;border-radius:7px;background:#1f77b4;border:1px solid #fff;margin-right:6px;"></span>
+    <span style="font-size:13px;">Kinaji（基那吉）</span>
+  </div>
+  <div style="display:flex;align-items:center;margin:3px 0;">
+    <span style="display:inline-block;width:14px;height:14px;border-radius:7px;background:#d62728;border:1px solid #fff;margin-right:6px;"></span>
+    <span style="font-size:13px;">Marikowan（馬里光）</span>
+  </div>
+</div>
+    
+            <div class="folium-map" id="map_914e429c92e52754747082b406281805" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_914e429c92e52754747082b406281805 = L.map(
+                "map_914e429c92e52754747082b406281805",
+                {
+                    center: [24.629540225510627, 121.30071337959689],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_914e429c92e52754747082b406281805);
+
+            
+
+        
+    
+            var tile_layer_9efdd56bd453c57bfb72382f30d1cb24 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+            var tile_layer_cbdbae91263bb14edeaa42113a9f526a = L.tileLayer(
+                "https://gis.sinica.edu.tw/tileserver/file-exists.php?img=JM300K_1924-png-{z}-{x}-{y}",
+                {"attribution": "GIS Center, RCHSS, Academia Sinica \u2014 non-commercial use", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+            var tile_layer_f022ce5473be251db5bbe2fb5c8a3b1d = L.tileLayer(
+                "https://gis.sinica.edu.tw/tileserver/file-exists.php?img=JM300K_1934-jpg-{z}-{x}-{y}",
+                {"attribution": "GIS Center, RCHSS, Academia Sinica \u2014 non-commercial use", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+            var circle_marker_d8e7645f9d2c8dfdeeb243bce0d78790 = L.circleMarker(
+                [24.576790918333362, 121.34128180761246],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_057e18130df52329d9401d26ed3c8677 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3c573a9cf337386116470b9fe1d3410c = $(`<div id="html_3c573a9cf337386116470b9fe1d3410c" style="width: 100.0%; height: 100.0%;"><b>Smangus（司馬庫斯）</b><br/>Marikowan（馬里光）</div>`)[0];
+            popup_057e18130df52329d9401d26ed3c8677.setContent(html_3c573a9cf337386116470b9fe1d3410c);
+        
+
+        circle_marker_d8e7645f9d2c8dfdeeb243bce0d78790.bindPopup(popup_057e18130df52329d9401d26ed3c8677)
+        ;
+
+        
+    
+    
+            circle_marker_d8e7645f9d2c8dfdeeb243bce0d78790.bindTooltip(
+                `<div>
+                     Smangus（司馬庫斯） · Marikowan（馬里光）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7df330aaf6b6f26921d68e456a6fb257 = L.circleMarker(
+                [24.65550062809762, 121.2978968651603],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_8a322c67cd5d679384fecc9940bc3fc1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8e4b9628f0fd30f682b026ac044ab183 = $(`<div id="html_8e4b9628f0fd30f682b026ac044ab183" style="width: 100.0%; height: 100.0%;"><b>Llyung（馬里光）</b><br/>Marikowan（馬里光）</div>`)[0];
+            popup_8a322c67cd5d679384fecc9940bc3fc1.setContent(html_8e4b9628f0fd30f682b026ac044ab183);
+        
+
+        circle_marker_7df330aaf6b6f26921d68e456a6fb257.bindPopup(popup_8a322c67cd5d679384fecc9940bc3fc1)
+        ;
+
+        
+    
+    
+            circle_marker_7df330aaf6b6f26921d68e456a6fb257.bindTooltip(
+                `<div>
+                     Llyung（馬里光） · Marikowan（馬里光）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b56ce75099ae3e17a6c593bad81c7dae = L.circleMarker(
+                [24.646633002357408, 121.34679057162569],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_e526261abfa2b032406b8c8ee95e17bf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1dd54f3201aef70616f16b9a168b225c = $(`<div id="html_1dd54f3201aef70616f16b9a168b225c" style="width: 100.0%; height: 100.0%;"><b>Tayax（抬耀）</b><br/>Marikowan（馬里光）</div>`)[0];
+            popup_e526261abfa2b032406b8c8ee95e17bf.setContent(html_1dd54f3201aef70616f16b9a168b225c);
+        
+
+        circle_marker_b56ce75099ae3e17a6c593bad81c7dae.bindPopup(popup_e526261abfa2b032406b8c8ee95e17bf)
+        ;
+
+        
+    
+    
+            circle_marker_b56ce75099ae3e17a6c593bad81c7dae.bindTooltip(
+                `<div>
+                     Tayax（抬耀） · Marikowan（馬里光）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_96c09c3939b3022b79f4efca063bd9a2 = L.circleMarker(
+                [24.658066143904925, 121.27809546217769],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_2c99e9705f38685f3f24391cd65bc6ee = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5349d7b14979783d677aa8eb0f83a9d6 = $(`<div id="html_5349d7b14979783d677aa8eb0f83a9d6" style="width: 100.0%; height: 100.0%;"><b>Uraw（宇老）</b><br/>Marikowan（馬里光）</div>`)[0];
+            popup_2c99e9705f38685f3f24391cd65bc6ee.setContent(html_5349d7b14979783d677aa8eb0f83a9d6);
+        
+
+        circle_marker_96c09c3939b3022b79f4efca063bd9a2.bindPopup(popup_2c99e9705f38685f3f24391cd65bc6ee)
+        ;
+
+        
+    
+    
+            circle_marker_96c09c3939b3022b79f4efca063bd9a2.bindTooltip(
+                `<div>
+                     Uraw（宇老） · Marikowan（馬里光）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_20fad2e66cb4ee9fd8f522fa59c5681b = L.circleMarker(
+                [24.65421785042008, 121.32756471115195],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_3fedc39c3ff5ff8e034bbce68c53e8e0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4dcda8ba3d8679e87f4d5af57bf5aa59 = $(`<div id="html_4dcda8ba3d8679e87f4d5af57bf5aa59" style="width: 100.0%; height: 100.0%;"><b>Quri（石磊）</b><br/>Marikowan（馬里光）</div>`)[0];
+            popup_3fedc39c3ff5ff8e034bbce68c53e8e0.setContent(html_4dcda8ba3d8679e87f4d5af57bf5aa59);
+        
+
+        circle_marker_20fad2e66cb4ee9fd8f522fa59c5681b.bindPopup(popup_3fedc39c3ff5ff8e034bbce68c53e8e0)
+        ;
+
+        
+    
+    
+            circle_marker_20fad2e66cb4ee9fd8f522fa59c5681b.bindTooltip(
+                `<div>
+                     Quri（石磊） · Marikowan（馬里光）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_57cea86ab49ac937539a65a0647f0b6e = L.circleMarker(
+                [24.666428612062333, 121.31296374583829],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_7356c4994c494e3adcf422e0ecaaa1df = L.popup({"maxWidth": "100%"});
+
+        
+            var html_40309b5eda47c5313c50f492a6b7c14a = $(`<div id="html_40309b5eda47c5313c50f492a6b7c14a" style="width: 100.0%; height: 100.0%;"><b>Mami（馬美）</b><br/>Marikowan（馬里光）</div>`)[0];
+            popup_7356c4994c494e3adcf422e0ecaaa1df.setContent(html_40309b5eda47c5313c50f492a6b7c14a);
+        
+
+        circle_marker_57cea86ab49ac937539a65a0647f0b6e.bindPopup(popup_7356c4994c494e3adcf422e0ecaaa1df)
+        ;
+
+        
+    
+    
+            circle_marker_57cea86ab49ac937539a65a0647f0b6e.bindTooltip(
+                `<div>
+                     Mami（馬美） · Marikowan（馬里光）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_aa0e63e246110ff8eae1446f97876c14 = L.circleMarker(
+                [24.636238895049274, 121.27791046637117],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_2e4aabfaa3321e83e93d5557dd00facc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_19275a1b6b0c41d3f8b599add2e85a04 = $(`<div id="html_19275a1b6b0c41d3f8b599add2e85a04" style="width: 100.0%; height: 100.0%;"><b>Tbahu（田埔）</b><br/>Kinaji（基那吉）</div>`)[0];
+            popup_2e4aabfaa3321e83e93d5557dd00facc.setContent(html_19275a1b6b0c41d3f8b599add2e85a04);
+        
+
+        circle_marker_aa0e63e246110ff8eae1446f97876c14.bindPopup(popup_2e4aabfaa3321e83e93d5557dd00facc)
+        ;
+
+        
+    
+    
+            circle_marker_aa0e63e246110ff8eae1446f97876c14.bindTooltip(
+                `<div>
+                     Tbahu（田埔） · Kinaji（基那吉）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_895f020b92555284229822704c4e783e = L.circleMarker(
+                [24.608334319528627, 121.29534118235324],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_0d9c80eaf25333f8700e57dd4d36d3a4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0da939e65764c3eea3f9e32e439e2ea1 = $(`<div id="html_0da939e65764c3eea3f9e32e439e2ea1" style="width: 100.0%; height: 100.0%;"><b>Thyakan（泰崗）</b><br/>Kinaji（基那吉）</div>`)[0];
+            popup_0d9c80eaf25333f8700e57dd4d36d3a4.setContent(html_0da939e65764c3eea3f9e32e439e2ea1);
+        
+
+        circle_marker_895f020b92555284229822704c4e783e.bindPopup(popup_0d9c80eaf25333f8700e57dd4d36d3a4)
+        ;
+
+        
+    
+    
+            circle_marker_895f020b92555284229822704c4e783e.bindTooltip(
+                `<div>
+                     Thyakan（泰崗） · Kinaji（基那吉）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_39937771f222fe38caea39fc8c953681 = L.circleMarker(
+                [24.604621545050893, 121.27531538630893],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_ee5030fd4a086119f1a33f588b100c2f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cc26894d38f0d040423a73836b6a1fc9 = $(`<div id="html_cc26894d38f0d040423a73836b6a1fc9" style="width: 100.0%; height: 100.0%;"><b>Kin lwan（錦路）</b><br/>Kinaji（基那吉）</div>`)[0];
+            popup_ee5030fd4a086119f1a33f588b100c2f.setContent(html_cc26894d38f0d040423a73836b6a1fc9);
+        
+
+        circle_marker_39937771f222fe38caea39fc8c953681.bindPopup(popup_ee5030fd4a086119f1a33f588b100c2f)
+        ;
+
+        
+    
+    
+            circle_marker_39937771f222fe38caea39fc8c953681.bindTooltip(
+                `<div>
+                     Kin lwan（錦路） · Kinaji（基那吉）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_284ad8452e446dfe5d9154fe5967b072 = L.circleMarker(
+                [24.588772490474128, 121.25393809312345],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_81675f8fc777c822c38824bd04d6e784 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_70e2714767d2305eff9c80de4ebcc092 = $(`<div id="html_70e2714767d2305eff9c80de4ebcc092" style="width: 100.0%; height: 100.0%;"><b>Yuluw（養老）</b><br/>Kinaji（基那吉）</div>`)[0];
+            popup_81675f8fc777c822c38824bd04d6e784.setContent(html_70e2714767d2305eff9c80de4ebcc092);
+        
+
+        circle_marker_284ad8452e446dfe5d9154fe5967b072.bindPopup(popup_81675f8fc777c822c38824bd04d6e784)
+        ;
+
+        
+    
+    
+            circle_marker_284ad8452e446dfe5d9154fe5967b072.bindTooltip(
+                `<div>
+                     Yuluw（養老） · Kinaji（基那吉）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_001b26d812bb14af7a61778bc0d44a08 = L.circleMarker(
+                [24.629338075338232, 121.30074888384242],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1.5}
+            ).addTo(map_914e429c92e52754747082b406281805);
+        
+    
+        var popup_f5165adb98186055af513d1d21d03ef0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_35354063e0d6463034f79c0516a393d1 = $(`<div id="html_35354063e0d6463034f79c0516a393d1" style="width: 100.0%; height: 100.0%;"><b>秀巒</b><br/>Kinaji（基那吉）</div>`)[0];
+            popup_f5165adb98186055af513d1d21d03ef0.setContent(html_35354063e0d6463034f79c0516a393d1);
+        
+
+        circle_marker_001b26d812bb14af7a61778bc0d44a08.bindPopup(popup_f5165adb98186055af513d1d21d03ef0)
+        ;
+
+        
+    
+    
+            circle_marker_001b26d812bb14af7a61778bc0d44a08.bindTooltip(
+                `<div>
+                     秀巒 · Kinaji（基那吉）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_f3a33434fb5d9e5cfe1a26545b507953 = {
+                base_layers : {
+                    "OSM \u73fe\u4ee3\u5730\u5716" : tile_layer_9efdd56bd453c57bfb72382f30d1cb24,
+                    "1924 \u65e5\u6cbb\u81fa\u7063\u5168\u5716\uff08XYZ\uff09" : tile_layer_cbdbae91263bb14edeaa42113a9f526a,
+                    "1934 \u65e5\u6cbb\u81fa\u7063\u5168\u5716\uff08XYZ\uff09" : tile_layer_f022ce5473be251db5bbe2fb5c8a3b1d,
+                },
+                overlays :  {
+                },
+            };
+            L.control.layers(
+                layer_control_f3a33434fb5d9e5cfe1a26545b507953.base_layers,
+                layer_control_f3a33434fb5d9e5cfe1a26545b507953.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_914e429c92e52754747082b406281805);
+            tile_layer_cbdbae91263bb14edeaa42113a9f526a.remove();
+            tile_layer_f022ce5473be251db5bbe2fb5c8a3b1d.remove();
+        
+</script>
+</html>

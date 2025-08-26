@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1989b0d698f73ef1848226be6456bda1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+ position: fixed; bottom: 16px; right: 16px; z-index: 9999;
+ background: white; padding: 10px 12px; border: 1px solid #ccc;
+ border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,.3);
+ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans TC', sans-serif;">
+  <div style="font-weight:600;margin-bottom:6px;">遷徙階段</div>
+  <div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#1f77b4;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">1. 瑞岩裂石</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#ff7f0e;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">2. 思源啞口</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#2ca02c;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">3. 古司馬庫斯</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#d62728;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">4. 抬耀部落</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#9467bd;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">5. 拉號部落（5-1）、鳥嘴部落（5-2）</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#8c564b;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">6. 司馬庫斯</span></div>
+</div>
+    
+            <div class="folium-map" id="map_1989b0d698f73ef1848226be6456bda1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1989b0d698f73ef1848226be6456bda1 = L.map(
+                "map_1989b0d698f73ef1848226be6456bda1",
+                {
+                    center: [24.11649545954738, 121.15586452771862],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_1989b0d698f73ef1848226be6456bda1);
+
+            
+
+        
+    
+            var tile_layer_6be53e6e29c98ce3070a14c72d2acef5 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+        
+    
+            var tile_layer_3373c9b0772425bef2836cb60ceb5aad = L.tileLayer(
+                "https://gis.sinica.edu.tw/tileserver/file-exists.php?img=JM300K_1924-png-{z}-{x}-{y}",
+                {"attribution": "GIS Center, RCHSS, Academia Sinica \u2014 non-commercial use", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+        
+    
+            var marker_6e92d127a129819aff840e9bf07c7f87 = L.marker(
+                [24.11649545954738, 121.15586452771862],
+                {}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+        
+    
+            var div_icon_b1e3096068f13da987f49a98c72a9c3b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        display:inline-block; padding:2px 8px; min-width:32px;\n        background:#1f77b4; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e\n        1\n    \u003c/div\u003e"});
+            marker_6e92d127a129819aff840e9bf07c7f87.setIcon(div_icon_b1e3096068f13da987f49a98c72a9c3b);
+        
+    
+        var popup_f43b730786d67739e6bb8b6353863851 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8b663c3a467c0a211190cb6f46382578 = $(`<div id="html_8b663c3a467c0a211190cb6f46382578" style="width: 100.0%; height: 100.0%;"><b>1. 瑞岩裂石</b></div>`)[0];
+            popup_f43b730786d67739e6bb8b6353863851.setContent(html_8b663c3a467c0a211190cb6f46382578);
+        
+
+        marker_6e92d127a129819aff840e9bf07c7f87.bindPopup(popup_f43b730786d67739e6bb8b6353863851)
+        ;
+
+        
+    
+    
+            marker_6e92d127a129819aff840e9bf07c7f87.bindTooltip(
+                `<div>
+                     1. 瑞岩裂石
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_513c29a4327afbeb162be56975c98b5a = L.marker(
+                [24.396734023150103, 121.35659733667579],
+                {}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+        
+    
+            var div_icon_0c2b8851201c369ee43b02350dc0c016 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        display:inline-block; padding:2px 8px; min-width:32px;\n        background:#ff7f0e; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e\n        2\n    \u003c/div\u003e"});
+            marker_513c29a4327afbeb162be56975c98b5a.setIcon(div_icon_0c2b8851201c369ee43b02350dc0c016);
+        
+    
+        var popup_1285318d4da9d2bd0c6a20c752781a41 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_302e53bbd70c3062f39259d02f261f48 = $(`<div id="html_302e53bbd70c3062f39259d02f261f48" style="width: 100.0%; height: 100.0%;"><b>2. 思源啞口</b></div>`)[0];
+            popup_1285318d4da9d2bd0c6a20c752781a41.setContent(html_302e53bbd70c3062f39259d02f261f48);
+        
+
+        marker_513c29a4327afbeb162be56975c98b5a.bindPopup(popup_1285318d4da9d2bd0c6a20c752781a41)
+        ;
+
+        
+    
+    
+            marker_513c29a4327afbeb162be56975c98b5a.bindTooltip(
+                `<div>
+                     2. 思源啞口
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2821049f7c174a6a4c89396d9d20d996 = L.marker(
+                [24.57644655814495, 121.34125399890932],
+                {}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+        
+    
+            var div_icon_467a71c4353ad4719066fc702355d832 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        display:inline-block; padding:2px 8px; min-width:32px;\n        background:#2ca02c; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e\n        3\n    \u003c/div\u003e"});
+            marker_2821049f7c174a6a4c89396d9d20d996.setIcon(div_icon_467a71c4353ad4719066fc702355d832);
+        
+    
+        var popup_5afcbd81ab2d6d27cfae552f562aec16 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b03566aed9f2b33a587f8a26d7e481f3 = $(`<div id="html_b03566aed9f2b33a587f8a26d7e481f3" style="width: 100.0%; height: 100.0%;"><b>3. 古司馬庫斯</b></div>`)[0];
+            popup_5afcbd81ab2d6d27cfae552f562aec16.setContent(html_b03566aed9f2b33a587f8a26d7e481f3);
+        
+
+        marker_2821049f7c174a6a4c89396d9d20d996.bindPopup(popup_5afcbd81ab2d6d27cfae552f562aec16)
+        ;
+
+        
+    
+    
+            marker_2821049f7c174a6a4c89396d9d20d996.bindTooltip(
+                `<div>
+                     3. 古司馬庫斯
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_15e96cb3ab1c7c77fe1556b3d7fab473 = L.marker(
+                [24.646899990534997, 121.34673486069771],
+                {}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+        
+    
+            var div_icon_71b53dec85eb054818a088c943d1ab3f = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        display:inline-block; padding:2px 8px; min-width:32px;\n        background:#d62728; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e\n        4\n    \u003c/div\u003e"});
+            marker_15e96cb3ab1c7c77fe1556b3d7fab473.setIcon(div_icon_71b53dec85eb054818a088c943d1ab3f);
+        
+    
+        var popup_9fe9afb5b8da1c6eb942545e127a6b9b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ddcc0be2e78d30a5e93e824854fbb1cc = $(`<div id="html_ddcc0be2e78d30a5e93e824854fbb1cc" style="width: 100.0%; height: 100.0%;"><b>4. 抬耀部落</b></div>`)[0];
+            popup_9fe9afb5b8da1c6eb942545e127a6b9b.setContent(html_ddcc0be2e78d30a5e93e824854fbb1cc);
+        
+
+        marker_15e96cb3ab1c7c77fe1556b3d7fab473.bindPopup(popup_9fe9afb5b8da1c6eb942545e127a6b9b)
+        ;
+
+        
+    
+    
+            marker_15e96cb3ab1c7c77fe1556b3d7fab473.bindTooltip(
+                `<div>
+                     4. 抬耀部落
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e5fd5ca22e980180244b05b88be80148 = L.marker(
+                [24.7181239517819, 121.25892240260568],
+                {}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+        
+    
+            var div_icon_347391966871497601b989880c51444b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        display:inline-block; padding:2px 8px; min-width:32px;\n        background:#9467bd; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e\n        5-1\n    \u003c/div\u003e"});
+            marker_e5fd5ca22e980180244b05b88be80148.setIcon(div_icon_347391966871497601b989880c51444b);
+        
+    
+        var popup_17d0205fcfa45ccf678cc751d14960bb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fe8f4e7b9bf55f605701a8cd01b70b11 = $(`<div id="html_fe8f4e7b9bf55f605701a8cd01b70b11" style="width: 100.0%; height: 100.0%;"><b>5-1. 拉號部落</b></div>`)[0];
+            popup_17d0205fcfa45ccf678cc751d14960bb.setContent(html_fe8f4e7b9bf55f605701a8cd01b70b11);
+        
+
+        marker_e5fd5ca22e980180244b05b88be80148.bindPopup(popup_17d0205fcfa45ccf678cc751d14960bb)
+        ;
+
+        
+    
+    
+            marker_e5fd5ca22e980180244b05b88be80148.bindTooltip(
+                `<div>
+                     5-1. 拉號部落
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_be3b7239e97d3f5fee0643da66f8ea9d = L.marker(
+                [24.717124917545398, 121.27901157344279],
+                {}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+        
+    
+            var div_icon_aac5ae3fb068179c773ae103fddd160e = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        display:inline-block; padding:2px 8px; min-width:32px;\n        background:#9467bd; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e\n        5-2\n    \u003c/div\u003e"});
+            marker_be3b7239e97d3f5fee0643da66f8ea9d.setIcon(div_icon_aac5ae3fb068179c773ae103fddd160e);
+        
+    
+        var popup_64c97b80280988e3982c709da6dfa163 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0fe072513843df6e6b54182c56f1f673 = $(`<div id="html_0fe072513843df6e6b54182c56f1f673" style="width: 100.0%; height: 100.0%;"><b>5-2. 鳥嘴部落</b></div>`)[0];
+            popup_64c97b80280988e3982c709da6dfa163.setContent(html_0fe072513843df6e6b54182c56f1f673);
+        
+
+        marker_be3b7239e97d3f5fee0643da66f8ea9d.bindPopup(popup_64c97b80280988e3982c709da6dfa163)
+        ;
+
+        
+    
+    
+            marker_be3b7239e97d3f5fee0643da66f8ea9d.bindTooltip(
+                `<div>
+                     5-2. 鳥嘴部落
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_12ea04fee120f80052b064fa5bc7e102 = L.marker(
+                [24.578538442157658, 121.33467814449963],
+                {}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+        
+    
+            var div_icon_c268be8da9563938266b63696550922d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        display:inline-block; padding:2px 8px; min-width:32px;\n        background:#8c564b; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e\n        6\n    \u003c/div\u003e"});
+            marker_12ea04fee120f80052b064fa5bc7e102.setIcon(div_icon_c268be8da9563938266b63696550922d);
+        
+    
+        var popup_b0263d28b6f47a1633eccd175297011f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2a0a792f0773a117b0be5b3859bc4f56 = $(`<div id="html_2a0a792f0773a117b0be5b3859bc4f56" style="width: 100.0%; height: 100.0%;"><b>6. 司馬庫斯</b></div>`)[0];
+            popup_b0263d28b6f47a1633eccd175297011f.setContent(html_2a0a792f0773a117b0be5b3859bc4f56);
+        
+
+        marker_12ea04fee120f80052b064fa5bc7e102.bindPopup(popup_b0263d28b6f47a1633eccd175297011f)
+        ;
+
+        
+    
+    
+            marker_12ea04fee120f80052b064fa5bc7e102.bindTooltip(
+                `<div>
+                     6. 司馬庫斯
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_1989b0d698f73ef1848226be6456bda1.fitBounds(
+                [[24.11649545954738, 121.15586452771862], [24.396734023150103, 121.35659733667579], [24.57644655814495, 121.34125399890932], [24.646899990534997, 121.34673486069771], [24.7181239517819, 121.25892240260568], [24.717124917545398, 121.27901157344279], [24.578538442157658, 121.33467814449963]],
+                {}
+            );
+        
+    
+            var layer_control_b0cc47267bc9dcb83b56ccf8899f53d8 = {
+                base_layers : {
+                    "OSM \u73fe\u4ee3\u5730\u5716" : tile_layer_6be53e6e29c98ce3070a14c72d2acef5,
+                    "1924 \u65e5\u6cbb\u81fa\u7063\u5168\u5716\uff08XYZ\uff09" : tile_layer_3373c9b0772425bef2836cb60ceb5aad,
+                },
+                overlays :  {
+                },
+            };
+            L.control.layers(
+                layer_control_b0cc47267bc9dcb83b56ccf8899f53d8.base_layers,
+                layer_control_b0cc47267bc9dcb83b56ccf8899f53d8.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_1989b0d698f73ef1848226be6456bda1);
+            tile_layer_3373c9b0772425bef2836cb60ceb5aad.remove();
+        
+</script>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8539ea2b4c8453f1597bd9b4f6a4f12e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 16px; right: 16px; z-index: 9999;
+ background: white; padding: 10px 12px; border: 1px solid #ccc;
+ border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,.3);
+ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans TC', sans-serif;">
+  <div style="font-weight:600;margin-bottom:6px;">遷徙階段</div>
+  <div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#1f77b4;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">1. Pinsbkan（瑞岩）</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#ff7f0e;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">2. Quri Sqabu（思源埡口）</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#2ca02c;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">3. Smangus（舊司馬庫斯）</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#d62728;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">4. Taiao（抬耀）</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#9467bd;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">5. Rahao（拉號）（5-1）、Cyocuy（鳥嘴）（5-2）</span></div><div style="display:flex;align-items:center;margin:3px 0;"><span style="display:inline-block;width:18px;height:18px;border-radius:9px;background:#8c564b;border:1px solid #fff;margin-right:6px;"></span><span style="font-size:13px;">6. Smangus（今司馬庫斯）</span></div>
+</div>
+    
+            <div class="folium-map" id="map_8539ea2b4c8453f1597bd9b4f6a4f12e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8539ea2b4c8453f1597bd9b4f6a4f12e = L.map(
+                "map_8539ea2b4c8453f1597bd9b4f6a4f12e",
+                {
+                    center: [24.11649545954738, 121.15586452771862],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+
+            
+
+        
+    
+            var tile_layer_5e7348d22a5db3cdabcf11f8292e8cd6 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var tile_layer_89419d2af3a951e501caecdfb4f82b44 = L.tileLayer(
+                "https://gis.sinica.edu.tw/tileserver/file-exists.php?img=JM300K_1924-png-{z}-{x}-{y}",
+                {"attribution": "GIS Center, RCHSS, Academia Sinica \u2014 non-commercial use", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var tile_layer_48653a793561674189e304180035ff31 = L.tileLayer(
+                "https://gis.sinica.edu.tw/tileserver/file-exists.php?img=JM300K_1934-jpg-{z}-{x}-{y}",
+                {"attribution": "GIS Center, RCHSS, Academia Sinica \u2014 non-commercial use", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var tile_layer_b3fcb6ddd3911860d36d5227a90e1028 = L.tileLayer(
+                "https://wmts.nlsc.gov.tw/wmts/B100000/default/GoogleMapsCompatible/{z}/{y}/{x}",
+                {"attribution": "NLSC WMTS \u2014 1/100000 \u5730\u5f62\u5716\uff08B100000\uff09", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var marker_3421dd0aa3ec7d03b2d1cbe201088029 = L.marker(
+                [24.11649545954738, 121.15586452771862],
+                {}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var div_icon_4ee11074b624eec6aeeef7d5f405bd39 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"display:inline-block; padding:2px 8px; min-width:32px;\n        background:#1f77b4; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e1\u003c/div\u003e"});
+            marker_3421dd0aa3ec7d03b2d1cbe201088029.setIcon(div_icon_4ee11074b624eec6aeeef7d5f405bd39);
+        
+    
+        var popup_b587614ec3843e1513fe6633a3630a77 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d307b6037a6c1ce794b6c071db9e75c0 = $(`<div id="html_d307b6037a6c1ce794b6c071db9e75c0" style="width: 100.0%; height: 100.0%;"><b>1. Pinsbkan（瑞岩）</b></div>`)[0];
+            popup_b587614ec3843e1513fe6633a3630a77.setContent(html_d307b6037a6c1ce794b6c071db9e75c0);
+        
+
+        marker_3421dd0aa3ec7d03b2d1cbe201088029.bindPopup(popup_b587614ec3843e1513fe6633a3630a77)
+        ;
+
+        
+    
+    
+            marker_3421dd0aa3ec7d03b2d1cbe201088029.bindTooltip(
+                `<div>
+                     1. Pinsbkan（瑞岩）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9b914c5deb96c9b95b789f1ffbe40438 = L.marker(
+                [24.396734023150103, 121.35659733667579],
+                {}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var div_icon_fb27dc666e42bb4f2ed04876e1f01e80 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"display:inline-block; padding:2px 8px; min-width:32px;\n        background:#ff7f0e; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e2\u003c/div\u003e"});
+            marker_9b914c5deb96c9b95b789f1ffbe40438.setIcon(div_icon_fb27dc666e42bb4f2ed04876e1f01e80);
+        
+    
+        var popup_c7d4bb9b0c5a51cf45697a980da419ca = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e4713ded996212911e7a7bf38cf09800 = $(`<div id="html_e4713ded996212911e7a7bf38cf09800" style="width: 100.0%; height: 100.0%;"><b>2. Quri Sqabu（思源埡口）</b></div>`)[0];
+            popup_c7d4bb9b0c5a51cf45697a980da419ca.setContent(html_e4713ded996212911e7a7bf38cf09800);
+        
+
+        marker_9b914c5deb96c9b95b789f1ffbe40438.bindPopup(popup_c7d4bb9b0c5a51cf45697a980da419ca)
+        ;
+
+        
+    
+    
+            marker_9b914c5deb96c9b95b789f1ffbe40438.bindTooltip(
+                `<div>
+                     2. Quri Sqabu（思源埡口）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_83e2be60ce0f1fbc17eed21fde1cc023 = L.marker(
+                [24.57644655814495, 121.34125399890932],
+                {}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var div_icon_f6826de16b6472364f5effdc0104ae8a = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"display:inline-block; padding:2px 8px; min-width:32px;\n        background:#2ca02c; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e3\u003c/div\u003e"});
+            marker_83e2be60ce0f1fbc17eed21fde1cc023.setIcon(div_icon_f6826de16b6472364f5effdc0104ae8a);
+        
+    
+        var popup_232510dba72a8ff4e465db4b12323b5e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1a60bb04cef717e488183d769e82b2bc = $(`<div id="html_1a60bb04cef717e488183d769e82b2bc" style="width: 100.0%; height: 100.0%;"><b>3. Smangus（舊司馬庫斯）</b></div>`)[0];
+            popup_232510dba72a8ff4e465db4b12323b5e.setContent(html_1a60bb04cef717e488183d769e82b2bc);
+        
+
+        marker_83e2be60ce0f1fbc17eed21fde1cc023.bindPopup(popup_232510dba72a8ff4e465db4b12323b5e)
+        ;
+
+        
+    
+    
+            marker_83e2be60ce0f1fbc17eed21fde1cc023.bindTooltip(
+                `<div>
+                     3. Smangus（舊司馬庫斯）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b7544d3115df92487e1a5c6156b863de = L.marker(
+                [24.646899990534997, 121.34673486069771],
+                {}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var div_icon_bcb52c5003898049e414e4a933ad17e7 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"display:inline-block; padding:2px 8px; min-width:32px;\n        background:#d62728; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e4\u003c/div\u003e"});
+            marker_b7544d3115df92487e1a5c6156b863de.setIcon(div_icon_bcb52c5003898049e414e4a933ad17e7);
+        
+    
+        var popup_03c8352f92172a8b256134cbd3cb5a91 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_93f3489364083fea8a14af1478e813cc = $(`<div id="html_93f3489364083fea8a14af1478e813cc" style="width: 100.0%; height: 100.0%;"><b>4. Taiao（抬耀）</b></div>`)[0];
+            popup_03c8352f92172a8b256134cbd3cb5a91.setContent(html_93f3489364083fea8a14af1478e813cc);
+        
+
+        marker_b7544d3115df92487e1a5c6156b863de.bindPopup(popup_03c8352f92172a8b256134cbd3cb5a91)
+        ;
+
+        
+    
+    
+            marker_b7544d3115df92487e1a5c6156b863de.bindTooltip(
+                `<div>
+                     4. Taiao（抬耀）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_04751e95f08be4df42de8a8b69f26e98 = L.marker(
+                [24.7181239517819, 121.25892240260568],
+                {}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var div_icon_a0f0bf5edb2b9591489aecc186261f3e = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"display:inline-block; padding:2px 8px; min-width:32px;\n        background:#9467bd; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e5-1\u003c/div\u003e"});
+            marker_04751e95f08be4df42de8a8b69f26e98.setIcon(div_icon_a0f0bf5edb2b9591489aecc186261f3e);
+        
+    
+        var popup_8d574a7c4cea2bcab9b4a1d6ca15eb02 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ee607fd485a12a5bb36938a18c616c3f = $(`<div id="html_ee607fd485a12a5bb36938a18c616c3f" style="width: 100.0%; height: 100.0%;"><b>5-1. Rahao（拉號）</b></div>`)[0];
+            popup_8d574a7c4cea2bcab9b4a1d6ca15eb02.setContent(html_ee607fd485a12a5bb36938a18c616c3f);
+        
+
+        marker_04751e95f08be4df42de8a8b69f26e98.bindPopup(popup_8d574a7c4cea2bcab9b4a1d6ca15eb02)
+        ;
+
+        
+    
+    
+            marker_04751e95f08be4df42de8a8b69f26e98.bindTooltip(
+                `<div>
+                     5-1. Rahao（拉號）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_51d5fd6d154d4c07ee7a4edf38305091 = L.marker(
+                [24.717124917545398, 121.27901157344279],
+                {}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var div_icon_fbaeff3efb824c461d9ace456c425726 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"display:inline-block; padding:2px 8px; min-width:32px;\n        background:#9467bd; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e5-2\u003c/div\u003e"});
+            marker_51d5fd6d154d4c07ee7a4edf38305091.setIcon(div_icon_fbaeff3efb824c461d9ace456c425726);
+        
+    
+        var popup_665f4b5c2c24272b809d869ae48ae6b3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7aad8913250cd9c157777c74b57fde01 = $(`<div id="html_7aad8913250cd9c157777c74b57fde01" style="width: 100.0%; height: 100.0%;"><b>5-2. Cyocuy（鳥嘴）</b></div>`)[0];
+            popup_665f4b5c2c24272b809d869ae48ae6b3.setContent(html_7aad8913250cd9c157777c74b57fde01);
+        
+
+        marker_51d5fd6d154d4c07ee7a4edf38305091.bindPopup(popup_665f4b5c2c24272b809d869ae48ae6b3)
+        ;
+
+        
+    
+    
+            marker_51d5fd6d154d4c07ee7a4edf38305091.bindTooltip(
+                `<div>
+                     5-2. Cyocuy（鳥嘴）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3127741f495c7fd519d8f393185985a6 = L.marker(
+                [24.578538442157658, 121.33467814449963],
+                {}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+        
+    
+            var div_icon_e7537c51a2dcd29dc90c50b598982d62 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"display:inline-block; padding:2px 8px; min-width:32px;\n        background:#8c564b; border:2px solid #ffffff; color:#ffffff;\n        border-radius:16px; font-weight:700; font-size:12px; line-height:20px;\n        text-align:center;\"\u003e6\u003c/div\u003e"});
+            marker_3127741f495c7fd519d8f393185985a6.setIcon(div_icon_e7537c51a2dcd29dc90c50b598982d62);
+        
+    
+        var popup_ce26dbb0573e61c02ad51d68c30e5a63 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fa664ebdc5a0acac82b5e9d847b5e4fa = $(`<div id="html_fa664ebdc5a0acac82b5e9d847b5e4fa" style="width: 100.0%; height: 100.0%;"><b>6. Smangus（今司馬庫斯）</b></div>`)[0];
+            popup_ce26dbb0573e61c02ad51d68c30e5a63.setContent(html_fa664ebdc5a0acac82b5e9d847b5e4fa);
+        
+
+        marker_3127741f495c7fd519d8f393185985a6.bindPopup(popup_ce26dbb0573e61c02ad51d68c30e5a63)
+        ;
+
+        
+    
+    
+            marker_3127741f495c7fd519d8f393185985a6.bindTooltip(
+                `<div>
+                     6. Smangus（今司馬庫斯）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_24bb78f39ce7332a36ab396731728a0c = {
+                base_layers : {
+                    "OSM \u73fe\u4ee3\u5730\u5716" : tile_layer_5e7348d22a5db3cdabcf11f8292e8cd6,
+                    "1924 \u65e5\u6cbb\u81fa\u7063\u5168\u5716\uff08XYZ\uff09" : tile_layer_89419d2af3a951e501caecdfb4f82b44,
+                    "1934 \u65e5\u6cbb\u81fa\u7063\u5168\u5716\uff08XYZ\uff09" : tile_layer_48653a793561674189e304180035ff31,
+                    "1/100000 \u5730\u5f62\u5716" : tile_layer_b3fcb6ddd3911860d36d5227a90e1028,
+                },
+                overlays :  {
+                },
+            };
+            L.control.layers(
+                layer_control_24bb78f39ce7332a36ab396731728a0c.base_layers,
+                layer_control_24bb78f39ce7332a36ab396731728a0c.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_8539ea2b4c8453f1597bd9b4f6a4f12e);
+            tile_layer_89419d2af3a951e501caecdfb4f82b44.remove();
+            tile_layer_48653a793561674189e304180035ff31.remove();
+            tile_layer_b3fcb6ddd3911860d36d5227a90e1028.remove();
+        
+    
+            map_8539ea2b4c8453f1597bd9b4f6a4f12e.fitBounds(
+                [[24.11649545954738, 121.15586452771862], [24.396734023150103, 121.35659733667579], [24.57644655814495, 121.34125399890932], [24.646899990534997, 121.34673486069771], [24.7181239517819, 121.25892240260568], [24.717124917545398, 121.27901157344279], [24.578538442157658, 121.33467814449963]],
+                {}
+            );
+        
+</script>
+</html>
