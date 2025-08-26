@@ -3,9 +3,42 @@ title: 資料處理／地圖繪製
 ---
 ## 資料處理／地圖繪製
 
-###### 日治時期 Kinaji／Marikowan代表聚落位置圖 ######
+###### 3D 模型掃描建置（Luma AI）
 
-匯入套件
+* 於手機中下載 Luma 3D Capture
+
+* 依照軟體介面提示，環繞拍攝欲建置的物件
+
+* 上傳至 Luma 雲端 （上傳時間大約 1 小時，視拍攝物件大小）
+
+* 於電腦 Luma AI - Interactive Scenes 網頁登入拍攝時所使用的帳號，檢視個人先前上傳的影像  
+https://lumalabs.ai/interactive-scenes
+
+* 點選分享功能，內有可複製的 iframe code ，可嵌入於於 jupyter book 中完成 3D 模型呈現
+
+
+###### 日治時期 Kinaji／Marikowan代表聚落位置圖 
+
+* 準備點位資料 (QGIS)
+
+  建立新的 gpkg ，根據整理文獻所得，點出當時聚落的大致位置。屬性表欄位包括聚落名稱、所屬社群
+
+<figure style="margin-left:2em; text-align:left;">
+  <img src="_static/tribe2.png" alt="logo" width="300" style="display:inline-block; margin:0;">
+  <figcaption style="font-size:0.9em; color:gray; text-align:left;">
+    點位示意圖　圖片來源：筆者照片
+  </figcaption>
+</figure>
+
+<figure style="margin-left:2em; text-align:left;">
+  <img src="_static/tribe3.png" alt="logo" width="300" style="display:inline-block; margin:0;">
+  <figcaption style="font-size:0.9em; color:gray; text-align:left;">
+    屬性表示意圖　圖片來源：筆者照片
+  </figcaption>
+</figure>
+
+
+* 匯入套件
 ```python
 from pathlib import Path
 import re
@@ -15,7 +48,7 @@ import pandas as pd
 ```
 * 輸入／輸出路徑
 ```python
-DATA = Path("日治蕃社.gpkg")  
+DATA = Path("日治原社.gpkg")  
 OUT  = Path("docs/_static/maps/kinaji_marikowan_points.html")
 ```
 * 讀取全部圖層，設定座標為 EPSG:4326
@@ -136,7 +169,12 @@ print("Saved:", OUT)
 
 ###### 司馬庫斯遷徙地圖 ######
 
-匯入套件
+* 準備點位資料 (QGIS)
+
+  建立新的 gpkg ，根據整理文獻所得，加入當時聚落的大致位置與名稱
+
+
+* 匯入套件
 ```python
 from pathlib import Path
 import re
