@@ -14,7 +14,7 @@ title: 資料處理／地圖繪製
 * 於電腦 Luma AI - Interactive Scenes 網頁登入拍攝時所使用的帳號，檢視個人先前上傳的影像  
 https://lumalabs.ai/interactive-scenes
 
-* 點選分享功能，內有可複製的 iframe code ，可嵌入於於 jupyter book 中完成 3D 模型呈現
+* 點選分享功能，內有可複製的 iframe code ，可嵌入於 jupyter book 中完成 3D 模型呈現
 
 
 ###### 日治時期 Kinaji／Marikowan代表聚落位置圖 
