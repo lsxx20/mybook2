@@ -545,7 +545,7 @@ document.write(`
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>將圖例插到地圖，並且加入LayerControl功能，讓使用者可以切換底圖</p></li>
+<li><p>圖例樣式設定，並且加入LayerControl功能，讓使用者可以切換底圖</p></li>
 </ul>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-weight:600;margin-bottom:6px;&quot;</span><span class="p">&gt;</span>代表社群<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -564,7 +564,7 @@ folium.LayerControl(position=&quot;topright&quot;, collapsed=False).add_to(m)
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>調整地圖縮放比例，剛好框住所有點。建立輸出資料夾，存成 HTML，並在終端機顯示路徑。</p></li>
+<li><p>調整地圖縮放比例、輸出</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bounds</span><span class="p">:</span>
     <span class="n">m</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
@@ -703,7 +703,7 @@ folium.LayerControl(position=&quot;topright&quot;, collapsed=False).add_to(m)
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>轉換成 HTML 的圖例</p></li>
+<li><p>圖例樣式設定</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">legend_rows</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">items_by_stage</span><span class="p">):</span>
@@ -734,7 +734,7 @@ folium.LayerControl(position=&quot;topright&quot;, collapsed=False).add_to(m)
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>調整地圖縮放比例，剛好框住所有點。建立輸出資料夾，存成 HTML，並在終端機顯示路徑。</p></li>
+<li><p>調整地圖縮放比例、輸出</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bounds</span><span class="p">:</span> 
     <span class="n">m</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>             
