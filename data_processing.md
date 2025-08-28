@@ -141,7 +141,7 @@ for _, r in gdf.iterrows():
     ).add_to(m)
     bounds.append([lat, lon])
 ```
-* 將圖例插到地圖，並且加入LayerControl功能，讓使用者可以切換底圖
+* 圖例樣式設定，並且加入LayerControl功能，讓使用者可以切換底圖
 ```html
 <div style="...">
   <div style="font-weight:600;margin-bottom:6px;">代表社群</div>
@@ -158,7 +158,7 @@ for _, r in gdf.iterrows():
 m.get_root().html.add_child(folium.Element(legend_html))
 folium.LayerControl(position="topright", collapsed=False).add_to(m)
 ```
-* 調整地圖縮放比例，剛好框住所有點。建立輸出資料夾，存成 HTML，並在終端機顯示路徑。
+* 調整地圖縮放比例、輸出
 ```python
 if bounds:
     m.fit_bounds(bounds)
@@ -281,7 +281,7 @@ for r in stages:
     if s not in items_by_stage[key]:
         items_by_stage[key].append(s)
 ```
-* 轉換成 HTML 的圖例
+* 圖例樣式設定
 ```python
 legend_rows = []
 for s in sorted(items_by_stage):
@@ -308,7 +308,7 @@ legend_html = f"""
 m.get_root().html.add_child(folium.Element(legend_html))
 folium.LayerControl(position="topright", collapsed=False).add_to(m)
 ```
-* 調整地圖縮放比例，剛好框住所有點。建立輸出資料夾，存成 HTML，並在終端機顯示路徑。
+* 調整地圖縮放比例、輸出
 ```python
 if bounds: 
     m.fit_bounds(bounds)             
