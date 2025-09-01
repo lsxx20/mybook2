@@ -3,13 +3,13 @@ title: 資料處理／地圖繪製
 ---
 ## 資料處理／地圖繪製
 
-###### 3D 模型掃描建置（Luma AI）
+###### 3D 掃描建置地景模型（Luma AI）
 
 * 於手機中下載 Luma 3D Capture
 
 * 依照軟體介面提示，環繞拍攝欲建置的物件
 
-* 上傳至 Luma 雲端 （上傳時間大約 1 小時，視拍攝物件大小）
+* 上傳至 Luma 雲端 （上傳時間約 1 小時，視拍攝物件大小）
 
 * 於電腦 Luma AI - Interactive Scenes 網頁登入拍攝時所使用的帳號，檢視個人先前上傳的影像  
 https://lumalabs.ai/interactive-scenes
