@@ -21,7 +21,7 @@ https://lumalabs.ai/interactive-scenes
 
 * 準備點位資料 (QGIS)
 
-  建立新的 gpkg ，根據整理文獻所得，點出當時聚落的大致位置。屬性表欄位包括聚落名稱、所屬社群
+  建立新的 gpkg ，根據整理文獻所得，點出當時聚落位置。屬性表欄位包括聚落名稱、所屬社群
 
 <figure style="margin-left:2em; text-align:left;">
   <img src="_static/tribe2.png" alt="logo" width="300" style="display:inline-block; margin:0;">
